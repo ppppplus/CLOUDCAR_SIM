@@ -49,7 +49,7 @@ class OdometryNode:
             return
         # 赋值
         cmd = Odometry()
-        cmd.header.stamp = self.last_recieved_stamp
+        cmd.header.stamp = rospy.Time.now()  # self.last_recieved_stamp
         cmd.header.frame_id = self.robot_name + '/odom'
         cmd.child_frame_id = self.robot_name + '/base_footprint'
         cmd.pose.pose = self.last_received_pose
