@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot name="RMP_1" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!--M_PI-->
+    <xacro:arg name="robot_name" default="RMP_2"/>
     <xacro:property name="M_PI" value="3.1415926535897931" />
     <!--rplidar description-->
     <!--rplidar position-->
@@ -62,8 +63,8 @@
       <parent link="base_link"/>
       <child link="imu_link"/>
     </joint>
-    <xacro:imu prefix="imu"/>
-    <xacro:astra_camera prefix="camera"/>
+    <xacro:imu prefix="imu" robot_name="$(arg robot_name)"/>
+    <xacro:astra_camera prefix="camera" robot_name="$(arg robot_name)"/>
     <xacro:joint_choose LR="right" FR="front" >
         <origin xyz="${front_wheel_position_x} ${right_wheel_position_y} ${wheel_position_z} " rpy="0 0 0"/>
     </xacro:joint_choose>
@@ -124,5 +125,5 @@
     <xacro:transmission_choose LR="left"  FR="front" />
     <xacro:transmission_choose LR="right" FR="rear"  />
     <xacro:transmission_choose LR="left"  FR="rear"  />
-    <xacro:rplidar LA="laser"/>
+    <xacro:rplidar LA="laser" robot_name="$(arg robot_name)"/>
 </robot>

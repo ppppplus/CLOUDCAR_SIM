@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="RMP_1" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="rplidar" params="LA">
+    <xacro:macro name="rplidar" params="LA robot_name">
         <!-- define rplidar_link -->
         <link name="${LA}_link">
             <box_inertial_matrix  m="0.001" w="0.001" h="0.001" d="0.001"/>
@@ -48,7 +48,7 @@
                 </ray>
                 <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
                     <topicName>scan</topicName>
-                    <frameName>laser_link</frameName>
+                    <frameName>${robot_name}/laser_link</frameName>
                 </plugin>
             </sensor>
         </gazebo>

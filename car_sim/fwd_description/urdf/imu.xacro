@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="RMP_1" xmlns:xacro="http://www.ros.org/wiki/xacro" >
-    <xacro:macro name="imu" params="prefix">
+    <xacro:macro name="imu" params="prefix robot_name">
         <link name="${prefix}_link">
             <inertial>
                 <mass value="0.001" /> 
@@ -30,17 +30,17 @@
             <gravity>true</gravity>
             <sensor name="imu_sensor" type="imu">
                 <always_on>true</always_on>
-                <update_rate>100</update_rate>
+                <update_rate>10</update_rate>
                 <visualize>true</visualize>
-                <topic>/imu</topic>
+                <topic>imu</topic>
                 <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-                    <topicName>/imu</topicName>
+                    <topicName>imu</topicName>
                     <bodyName>imu_link</bodyName>
-                    <updateRateHZ>0.0</updateRateHZ>
+                    <updateRateHZ>10.0</updateRateHZ>
                     <gaussianNoise>0.0</gaussianNoise>
                     <xyzOffset>0 0 0</xyzOffset>
                     <rpyOffset>0 0 0</rpyOffset>
-                    <frameName>imu_link</frameName>
+                    <frameName>${robot_name}/imu_link</frameName>
                 </plugin>
                 <!--pose>0 0 0 0 0 0</pose-->
             </sensor>

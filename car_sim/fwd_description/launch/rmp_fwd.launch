@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" default="AKM_1"/>
+    <arg name="robot_name" default="RMP_1"/>
     <arg name="x_pos" default="0"/>
     <arg name="y_pos" default="0"/>
     <arg name="z_pos" default="0.5"/>
@@ -22,7 +22,7 @@
     </node>
 
     <arg name="model" default="$(find xacro)/xacro --inorder '$(find fwd_description)/urdf/mini_4wd/mini_4wd.xacro'"/>
-    <param name="robot_description" command="$(arg model)" />
+    <param name="robot_description" command="$(arg model) robot_name:=$(arg robot_name)" />
     <!-- tf -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
         <remap from="/joint_states" to="/$(arg robot_name)/joint_states"/>
