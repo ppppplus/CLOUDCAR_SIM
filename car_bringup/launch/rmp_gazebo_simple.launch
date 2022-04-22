@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" value="RMP_1"/>
+    <arg name="robot_name" value="RMP_2"/>
     <arg name="world_name" value="$(find car_bringup)/worlds/simple.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
@@ -29,7 +29,12 @@
         <arg name="yaw_pos" value="$(arg yaw_pos)"/>
     </include>
     </group>
-    <rosparam command="load" file="$(find car_bringup)/config/bridge.yaml" />
+    <rosparam file="$(find car_bringup)/config/bridge.yaml"/>
+    <!-- <rosparam command="load" file="$(find car_bringup)/config/bridge.yaml" >
+        <remap from="/camera/rgb/image_raw" to="/$(arg robot_name)/camera/rgb/image_raw"/>
+        <remap from="/cmd_vel" to="/$(arg robot_name)/cmd_vel"/>
+        <remap from="/imu" to="/$(arg robot_name)/imu"/>
+    </rosparam> -->
     <!-- <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find car_bringup)/rviz/RMP_1_rrt.rviz">
         <remap from="/move_base_simple/goal" to="/$(arg robot_name)/move_base_simple/goal"/>
         <remap from="/initialpose" to="/$(arg robot_name)/initialpose"/>
