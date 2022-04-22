@@ -29,9 +29,9 @@
         <arg name="yaw_pos" value="$(arg yaw_pos)"/>
     </include>
     </group>
-    <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find car_bringup)/rviz/RMP_1_rrt.rviz">
+    <rosparam command="load" file="$(find car_bringup)/config/bridge.yaml" />
+    <!-- <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find car_bringup)/rviz/RMP_1_rrt.rviz">
         <remap from="/move_base_simple/goal" to="/$(arg robot_name)/move_base_simple/goal"/>
         <remap from="/initialpose" to="/$(arg robot_name)/initialpose"/>
-        <!-- <remap from="/clicked_point" to="/$(arg robot_name)/clicked_point"/> -->
-    </node>
+    </node> -->
 </launch>
