@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="RMP_1" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!--M_PI-->
-    <xacro:arg name="robot_name" default="RMP_2"/>
+    <xacro:arg name="robot_name" default="RMP_1"/>
     <xacro:property name="M_PI" value="3.1415926535897931" />
     <!--rplidar description-->
     <!--rplidar position-->
@@ -40,14 +40,14 @@
     <xacro:include filename="$(find fwd_description)/urdf/mini_4wd/mini4wd_transmission.xacro" />
     <joint name="rplidar_joint" type="fixed">
         <origin xyz="${rplidar_offset_x} ${rplidar_offset_y} ${rplidar_offset_z}" rpy="0 0 0" />
-	<parent link="base_link"/>
-	<child link="laser_link"/>
+	    <parent link="base_link"/>
+	    <child link="laser_link"/>
     </joint>    
     <!-- Attach the camera -->
     <joint name="camera_frame_joint" type="fixed">
-	<origin xyz="${camera_offset_x} ${camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
-	<parent link="base_link"/>
-	<child link="camera_link"/>
+	    <origin xyz="${camera_offset_x} ${camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
+	    <parent link="base_link"/>
+	    <child link="camera_link"/>
     </joint>
     <xacro:macro name="joint_choose" params="LR FR *origin ">
     <joint name="${LR}_${FR}_wheel_joint" type="continuous">
