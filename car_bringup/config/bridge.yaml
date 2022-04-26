@@ -20,6 +20,10 @@ topics:
     type: sensor_msgs/msg/LaserScan
     queue_size: 1
   -
+    topic: /RMP_1/map
+    type: nav_msgs/msg/OccupancyGrid
+    queue_size: 1
+  -
     topic: /tf  
     type: tf2_msgs/msg/TFMessage
     queue_size: 1

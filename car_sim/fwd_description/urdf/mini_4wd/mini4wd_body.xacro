@@ -32,6 +32,19 @@
             </geometry>
         </collision>
     </link>
+    <!-- <gazebo>
+      <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>50.0</updateRate>
+          <bodyName>base_link</bodyName>
+          <topicName>odem</topicName>
+          <gaussianNoise>0.01</gaussianNoise>
+          <frameName>base_link</frameName>
+          <tf_prefix>RMP_1</tf_prefix>
+          <xyzOffsets>0 0 0</xyzOffsets>
+          <rpyOffsets>0 0 0</rpyOffsets>
+      </plugin>
+    </gazebo> -->
     <xacro:macro name="wheel_choose" params="LR  FR *origin *mass *inertia">
     <link name="${LR}_${FR}_wheel_link">
         <inertial>
