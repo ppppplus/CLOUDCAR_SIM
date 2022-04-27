@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="robot_name"  default="panda"/>
+<group ns="$(arg robot_name)">
+    <node name="mqtt_node" pkg="mqtt_cast" type="mqtt_publisher.py"  output="screen" respawn="false">
+        <!-- set private parameters for the node -->
+        <param name="mqtt_debug"  type="bool" value="true" />
+        <param name="mqtt_print_message"  type="bool" value="true"/>
+        <param name="broker_ip"  type="str" value="172.16.0.94" />
+    </node>
+</group>
+</launch>

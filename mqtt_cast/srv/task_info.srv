@@ -1,0 +1,17 @@
+bool ready
+---
+string seqId
+int64 actionTime
+string deviceId
+string type
+string orderId
+string packageNo
+string cabinetCode
+string cabinetPositionX
+string cabinetPositionY
+string buildingPositionX
+string buildingPositionY
+string boxId
+string indoorX
+string indoorY
+string floorNo

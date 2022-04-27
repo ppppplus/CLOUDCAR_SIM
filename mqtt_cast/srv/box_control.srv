@@ -1,0 +1,9 @@
+string seqId
+int64 actionTime
+string deviceId
+string type
+string orderId
+string cabinetCode
+string boxId
+---
+bool ready
