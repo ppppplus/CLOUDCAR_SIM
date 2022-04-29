@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" value="ROBOT_1"/>
+    <arg name="robot_name" default="ROBOT_1"/>
     <arg name="world_name" value="$(find car_bringup)/worlds/simple.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
