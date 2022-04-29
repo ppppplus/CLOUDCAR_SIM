@@ -10,7 +10,7 @@
     <arg name="y_pos" default="0"/>
     <arg name="z_pos" default="0.2"/>
     <arg name="yaw_pos" default="0"/>
-    <rosparam file="$(find car_bringup)/config/bridge.yaml"/>
+    <rosparam file="$(find car_bringup)/config/bridge_${arg robot_name}.yaml"/>
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(arg world_name)" />
         <arg name="debug" value="$(arg debug)" />
