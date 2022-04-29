@@ -1,27 +1,31 @@
 topics:
   -
-    topic: /RMP_1/camera/rgb/image_raw   # ROS1 topic name
+    topic: /ROBOT_1/camera/rgb/image_raw   # ROS1 topic name
     type: sensor_msgs/msg/Image  # ROS2 type name
     queue_size: 1  # For the publisher back to ROS1
   -
-    topic: /RMP_1/cmd_vel
+    topic: /ROBOT_1/cmd_vel
     type: geometry_msgs/msg/Twist
     queue_size: 1
   -
-    topic: /RMP_1/imu
+    topic: /ROBOT_1/imu
     type: sensor_msgs/msg/Imu
     queue_size: 1
   -
-    topic: /RMP_1/odom
+    topic: /ROBOT_1/odom
     type: nav_msgs/msg/Odometry
     queue_size: 1
   -
-    topic: /RMP_1/scan  
+    topic: /ROBOT_1/scan  
     type: sensor_msgs/msg/LaserScan
     queue_size: 1
   -
-    topic: /RMP_1/map
+    topic: /ROBOT_1/map
     type: nav_msgs/msg/OccupancyGrid
+    queue_size: 1
+  -
+    topic: /ROBOT_1/pose
+    type: geometry_msgs/msg/TwistStamped
     queue_size: 1
   -
     topic: /tf  

@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" value="RMP_1"/>
+    <arg name="robot_name" value="ROBOT_1"/>
     <arg name="world_name" value="$(find car_bringup)/worlds/simple.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
@@ -10,7 +10,7 @@
     <arg name="y_pos" default="0"/>
     <arg name="z_pos" default="0.2"/>
     <arg name="yaw_pos" default="0"/>
-
+    <rosparam file="$(find car_bringup)/config/bridge.yaml"/>
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(arg world_name)" />
         <arg name="debug" value="$(arg debug)" />
@@ -29,7 +29,7 @@
         <arg name="yaw_pos" value="$(arg yaw_pos)"/>
     </include>
     </group>
-    <rosparam file="$(find car_bringup)/config/bridge.yaml"/>
+    <node name="gazebo_pose_node" pkg="car_bringup" type="get_pose.py"/>
     <!-- <rosparam command="load" file="$(find car_bringup)/config/bridge.yaml" >
         <remap from="/camera/rgb/image_raw" to="/$(arg robot_name)/camera/rgb/image_raw"/>
         <remap from="/cmd_vel" to="/$(arg robot_name)/cmd_vel"/>
