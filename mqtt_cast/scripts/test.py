@@ -20,7 +20,7 @@ def subscribe():
     # 连接 IP port keepalive
     client.connect('172.16.0.94', 1883, 600)
     # 订阅的 topic
-    client.subscribe("ROBOT_1/running_status", qos=0)
+    client.subscribe("ROBOT_2/running_status", qos=0)
     client.loop_forever()
 
 
